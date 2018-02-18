@@ -1,136 +1,85 @@
-print("This is the ingredients list to make 48 Ultimate chocolate chip cookies: ")
-print()
-print("3/4 cup granulated sugar")
-print("1 cup butter or margarine, softened")
-print("1 teaspoon vanilla")
-print("1 egg")
-print("2 1/4 cup all-purpose flour")
-print("1 teaspoon baking soda")
-print("1/2 teaspoon salt")
-print("1 cup coarsely chopped nuts")
-print("1 package (12 ounces) semisweet chocolate chips (2 cups)")
+#Mayra Merino
+#Ingredient adjuster
+print("Nestle Chocolate Chip cookies")
 
-BatchOfCookies = 48
-cupsOfGranulatedSugarPer48Cookies = .75
-cupsOfBrownSugarPer48Cookies = .75
-cupsOfButterPer48Cookies = 1
-teaspoonsOfVanilla = 1
-eggsPer48Cookies = 1
-cupsOfFlourPer48Cookies = 2.25
-teaspoonsOfBakingSodaPer48Cookies = 1
-teaspoonsOfSaltPer48Cookies = .5
-cupsOfNuts = 1
-packagesOfChocolateChips = 1
-print ()
-userNumberOfCookies = int( input( "How many cookies do you want to make: ") )
+cookies = float(input('How many chocolate chip cookies do you want to make?'))
 
-expectedCupsOfGranulateSugar = ( userNumberOfCookies / BatchOfCookies ) * \
-                      cupsOfGranulatedSugarPer48Cookies
-expectedCupsOfBrownSugar = ( userNumberOfCookies / BatchOfCookies ) * \
-                           cupsOfBrownSugarPer48Cookies
-expectedTeaspoonsOfVanilla = ( userNumberOfCookies / BatchOfCookies ) * \
-                             teaspoonsOfVanilla
-expectedEggs = (userNumberOfCookies / BatchOfCookies ) * \
-               eggsPer48Cookies
+print("To make", cookies, "chocolate chip cookies you will need the following items:")
 
-expectedCupsOfButter = ( userNumberOfCookies / BatchOfCookies ) * \
-                       cupsOfButterPer48Cookies
+#Recipe calculations
+import math
 
-expectedCupsOfFlour = ( userNumberOfCookies / BatchOfCookies ) * \
-                      cupsOfFlourPer48Cookies
-expectedTeaspoonsOfBakingSoda = ( userNumberOfCookies / BatchOfCookies ) * \
-                                teaspoonsOfBakingSodaPer48Cookies
-expectedTeaspoonsOfSalt = (userNumberOfCookies / BatchOfCookies ) * \
-                          teaspoonsOfSaltPer48Cookies
-expectedCupsOfNuts = (userNumberOfCookies / BatchOfCookies ) * \
-                     cupsOfNuts
-expectedPackagesOfChocolateChips = (userNumberOfCookies / BatchOfCookies) * \
-                                   packagesOfChocolateChips
-                               
-print( "To Make " + str(userNumberOfCookies ) + " cookies, you will need: \n" + \
-       format(expectedCupsOfGranulateSugar, ".2f")  + " cups of granulated sugar \n" + \
-       format(expectedCupsOfBrownSugar, ".2f") + " cups of brown sugar \n " + \
-       format(expectedTeaspoonsOfVanilla, ".2f") + " teaspoon(s) of vanilla \n " + \
-       format(expectedEggs, ".2f") + " egg(s) \n" + \
-       format(expectedCupsOfButter, ".2f" ) + " cup(s) of butter \n" + \
-       format(expectedCupsOfFlour, ".2f" ) + " cup(s) of flour \n " + \
-       format(expectedTeaspoonsOfBakingSoda, ".2f") + " teaspoon(s) of baking soda \n" + \
-       format(expectedTeaspoonsOfSalt, ".2f") + " teaspoon(s) of salt \n " + \
-       format(expectedCupsOfNuts, ".2f" ) + " cup(s) of nuts and \n" + \
-       format(expectedPackagesOfChocolateChips, ".2f" ) + " package(s) of chocolate chips" )
+flour_cups = 2.25/60 * cookies
 
+bakingsoda_tsp = 1/60 * cookies
 
+salt_tsp = 1/60 * cookies
 
-granulatedSugarPackCost = 1.99
-brownSugarPackCost = 1.79
-butterPackCost= 4.99
-bottleOfVanillaCost = 4.99
-caseOfEggsCost = 3.99
-bagOfFlourCost = 1.99
-bakingSodaBoxCost = 1.00
-saltCost = 2.50
-bagOfNuts = 10.00
-packagesOfChocolateChipsCost = 2.50
+butter_cups = 1/60 * cookies
 
-cupsOfSugarPerPack =2
-cupsOfBrownSugarPerPack = 3.5
-cupsOfButterPerPack= 2
-teaspoonsOfVanillaPerBottle= 12
-eggsPerCase=12
-cupsOfFlourPerBag=7
-teaspoonsOfBakingSodaPerBox=91
-teaspoonsOfSaltPerContainer=130
-cupsOfNutsPerBag=7
-cupsOfChocolateChipsPerBag=2
+granulated_sugar_cups = .75/60 * cookies
 
-expectedGranulatedSugarPackCost = ((expectedCupsOfGranulateSugar / cupsOfSugarPerPack) * \
-                                  granulatedSugarPackCost) + granulatedSugarPackCost
-expectedBrownSugarPackCost = ((expectedCupsOfBrownSugar / cupsOfBrownSugarPerPack) * \
-                             brownSugarPackCost) + brownSugarPackCost 
-expectedButterPackCost=( (expectedCupsOfButter / cupsOfButterPerPack) * \
-                        butterPackCost) + butterPackCost
-expectedBottleOfVanillaCost = ((expectedTeaspoonsOfVanilla / teaspoonsOfVanillaPerBottle ) * \
-                              bottleOfVanillaCost) + bottleOfVanillaCost
-expectedCaseOfEggsCost = ((expectedEggs / eggsPerCase) * caseOfEggsCost) + caseOfEggsCost
-expectedBagOfFlourCost = ((expectedCupsOfFlour / cupsOfFlourPerBag) * bagOfFlourCost) + bagOfFlourCost
-expectedBakingSodaBoxCost = ((expectedTeaspoonsOfBakingSoda /teaspoonsOfBakingSodaPerBox) * \
-                            bakingSodaBoxCost) + bakingSodaBoxCost
-expectedSaltCost = ((expectedTeaspoonsOfSalt / teaspoonsOfSaltPerContainer) * saltCost) + saltCost
-expectedBagOfNuts = ((expectedCupsOfNuts / cupsOfNutsPerBag)*bagOfNuts) + bagOfNuts
-expectedPackagesOfChocolateChipsCost = ((expectedPackagesOfChocolateChips/cupsOfChocolateChipsPerBag)*\
-                                       packagesOfChocolateChipsCost) + packagesOfChocolateChipsCost
+brown_sugar_cups = .75/60 * cookies
 
-if userNumberOfCookies <=48:
-    print()
-    print( "To make " + str(userNumberOfCookies ) + " cookies, you will pay: \n" + \
-       "$", format(granulatedSugarPackCost, ".2f" ) + " for granulated sugar \n" + \
-       "$", format(brownSugarPackCost, ".2f") + " for brown sugar \n " + \
-       "$", format(bottleOfVanillaCost, ".2f") + " for vanilla \n " + \
-       "$", format(caseOfEggsCost, ".2f") + " for eggs \n" + \
-       "$", format(butterPackCost, ".2f" ) + " for butter \n" + \
-       "$", format(bagOfFlourCost, ".2f" ) + "for flour \n " + \
-       "$", format(bakingSodaBoxCost, ".2f") + "f or baking soda \n" + \
-       "$", format(saltCost, ".2f") + " for salt \n " + \
-       "$", format(bagOfNuts, ".2f" ) + " for nuts and \n" + \
-       "$", format(packagesOfChocolateChipsCost, ".2f" ) + " for chocolate chips" )
+vanilla_tsp = 1/60 * cookies
+
+eggs = 2/60 * cookies
+
+chocolate_chips_oz = 12/60 * cookies
+
+#Cost of ingredients
+cost_flour = 1.89/4 * flour_cups
+
+cost_baking_soda = 1.48/96 * bakingsoda_tsp
+
+cost_salt = .89/156 * salt_tsp
+
+cost_butter = 2.88/1 * butter_cups
+
+cost_granulated_sugar = 2.56/8 * granulated_sugar_cups
+
+cost_brown_sugar = 1.74/4 * brown_sugar_cups
+
+cost_vanilla = 6.92/12 * vanilla_tsp
+
+cost_eggs = 2.99/12 * eggs
+
+cost_chocolate_chips = 2.69/12 * chocolate_chips_oz
+
+#total equation
+total_cost = cost_flour + cost_baking_soda + cost_salt + cost_butter + cost_granulated_sugar + cost_brown_sugar + cost_vanilla + cost_eggs + cost_chocolate_chips
+
+#Display adjusted ingredients
+print(format(flour_cups, '.2f'),"cups of flour. It will cost you about $",format(cost_flour, '.2f'))
+print(format(bakingsoda_tsp,'.2f'),"teaspoons of baking soda. It will cost you about $", format(cost_baking_soda, '.2f'))
+print(format(salt_tsp,'.2f'), "teaspoons of salt. It will cost you about $", format(cost_salt, '.2f'))
+print(format(butter_cups, '.2f'), "cups of butter. It will cost you about $", format(cost_butter, '.2f'))
+print(format(granulated_sugar_cups,'.2f'), "cups of granulated sugar. It will cost you about $", format(cost_granulated_sugar, '.2f'))
+print(format(brown_sugar_cups, '.2f'), "cups of brown sugar. It will cost you about $", format(cost_brown_sugar, '.2f'))
+print(format(vanilla_tsp, '.2f'), "teaspoons of vanilla. It will cost you about $", format(cost_vanilla, '.2f'))
+print(math.ceil(eggs),'eggs. They will cost you about $', format(cost_eggs, '.2f'))
+print(format(chocolate_chips_oz, '.2f'), "oz of chocolate chips. It will cost you about $", format(cost_chocolate_chips, '.2f'))
+print("The total cost to make",cookies,"cookies is: $", format(total_cost, '.2f'))
+print("______________________________________________________________________")
+
+#original recipe
+recipe = input("Would you like to see the original Nestle Chocolate Chip cookie recipe? Enter yes or no.\n ")
+if recipe == 'yes':
+    print("The following recipe is the original and will make 5 dozen chocolate chip cookies")
+    print("2.25 cups of flour")
+    print("1 teaspoon of baking soda")
+    print("1 teaspoon of salt")
+    print("1 cup of butter")
+    print(".75 cups of granulated sugar")
+    print(".75 cups of brown sugar")
+    print("1 teaspoon of vanilla extract")
+    print("2 eggs")
+    print("2 cups of Nestle Toll House chocolate chips")
 else:
-    print()
-    print( "To make " + str(userNumberOfCookies ) + " cookies, you will pay: \n" + \
-       "$", format(expectedGranulatedSugarPackCost, ".2f" ) + " for granulated sugar \n" + \
-       "$", format(expectedBrownSugarPackCost, ".2f") + " for brown sugar \n " + \
-       "$", format(expectedBottleOfVanillaCost, ".2f") + " for vanilla \n " + \
-       "$", format(expectedCaseOfEggsCost, ".2f") + " for eggs \n" + \
-       "$", format(expectedButterPackCost, ".2f" ) + " for butter \n" + \
-       "$", format(expectedBagOfFlourCost, ".2f" ) + " for flour \n " + \
-       "$", format(expectedBakingSodaBoxCost, ".2f") + " for baking soda \n" + \
-       "$", format(expectedSaltCost, ".2f") + " for salt \n " + \
-       "$", format(expectedBagOfNuts, ".2f" ) + " for nuts and \n" + \
-       "$", format(expectedPackagesOfChocolateChipsCost, ".2f" ) + " for chocolate chips" )
-print()
-print("You estimated total cost is:$", format(expectedGranulatedSugarPackCost + expectedBrownSugarPackCost + \
-                                        expectedBottleOfVanillaCost + expectedCaseOfEggsCost + \
-                                        expectedButterPackCost + expectedBagOfFlourCost + \
-                                        expectedBakingSodaBoxCost + expectedSaltCost + \
-                                        expectedBagOfNuts + expectedPackagesOfChocolateChipsCost, ".2f"))
+    print("Enjoy your cookies!")
+        
+
+
+
 
 
