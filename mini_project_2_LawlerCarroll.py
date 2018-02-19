@@ -1,3 +1,6 @@
+#For this project, Michael researched and found prices for our ingredients and helped with formatting while I composed the logic \
+#and structure of the code.
+
 #Importing the math module allows us to do some rounding that will come in handy later.
 import math
 
